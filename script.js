@@ -32,8 +32,23 @@ function checkIPT(v) {
         console.log(eval("has" + v))
     }
 
-    checkEq1();
-    checkEq2();
+    const arr = [hasV, hasU, hasA, hasT, hasS];
+    const arrdict = {'V':hasV, 'U':hasU, 'A':hasA, 'T':hasT, 'S':hasS};
+    const count = arr.filter(Boolean).length;
+    //console.log(`Amount of true is: ${count}`)
+    if(arr.length - count >= 2) {
+        //console.log("equation 1 is available.")
+        checkEq1();
+        checkEq2();
+        checkEq3();
+    }
+    else {
+        alert("Only three inputs allowed each time.")
+        document.getElementById("ipt_" + v).className = "input_field"
+        document.getElementById("ipt_" + v).value = ''
+        eval("has" + v + '=' + false)
+    }
+
     if(document.getElementById("ipt_V").value != '') document.getElementById("calc_V").value = '';
     if(document.getElementById("ipt_A").value != '') document.getElementById("calc_A").value = '';
     if(document.getElementById("ipt_U").value != '') document.getElementById("calc_U").value = '';
@@ -48,12 +63,7 @@ function checkEq1() {
     const count = arr.filter(Boolean).length;
     //console.log(`Amount of true is: ${count}`)
     if(arr.length - count == 1){
-        //console.log("equation 1 is available.")
-        for(let key in arrdict){
-            if(arrdict[key] == false){
-                //console.log("Missing variable is: " + key);
-                missingKey = key
-            }
+        checkMissing(arrdict)
         }
         switch (missingKey){
             case "":
@@ -73,7 +83,6 @@ function checkEq1() {
             default:
                 break;
         }
-    }
 }
 function checkEq2() {
 
@@ -82,13 +91,7 @@ function checkEq2() {
     const count = arr.filter(Boolean).length;
     console.log(`Amount of true is: ${count}`)
     if (arr.length - count == 1) {
-        console.log("equation 2 is available.")
-        for (let key in arrdict) {
-            if (arrdict[key] == false) {
-                console.log("Missing variable is: " + key);
-                missingKey = key
-            }
-        }
+        checkMissing(arrdict)
         switch (missingKey){
             case "":
                 break;
@@ -109,6 +112,43 @@ function checkEq2() {
         }
     }
 }
+function checkEq3() {
+    const arr = [hasV, hasU, hasA, hasS];
+    const arrdict = {'V': hasV, 'U': hasU, 'T': hasA, 'S': hasS};
+    const count = arr.filter(Boolean).length;
+    console.log(`Amount of true is: ${count}`)
+    if (arr.length - count == 1) {
+        console.log("equation 3 is available.")
+        checkMissing(arrdict);
+        switch (missingKey) {
+            case "":
+                break;
+            case 'V':
+                document.getElementById("calc_V").value = (2 * valS) / valT - valU;
+                break;
+            case 'U':
+                document.getElementById("calc_U").value = (valV ** 2 - 2 * valA * valS) ** 0.5;
+                break;
+            case 'A':
+                document.getElementById("calc_A").value = (valV ** 2 - valU ** 2) / (2 * valS);
+                break;
+            case 'S':
+                document.getElementById("calc_S").value = (valV ** 2 - valU ** 2) / (2 * valA);
+                break;
+            default:
+                break;
+        }
+    }
+}
+function checkMissing(arrdict){
+    for (let key in arrdict) {
+        if (arrdict[key] == false) {
+            console.log("Missing variable is: " + key);
+            missingKey = key
+        }
+    }
+}
+
 /*
 * v	= u + at
 * s = (u+v)/2 * t

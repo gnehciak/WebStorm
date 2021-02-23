@@ -25,12 +25,11 @@
 
         <h2>v = u + at</h2>
 
+        <label for="ipt_U"><b>u</b> - initial velocity (ms-1)</label>
+        <input oninput="checkIPT('U')" type="text" id="ipt_U" class="input_field" size="5" placeholder="initial velocity (ms-1)">
 
         <label for="ipt_V"><b>v</b> - Final Velocity</label>
         <input oninput="checkIPT('V')" type="text" id="ipt_V"class="input_field" placeholder="velocity">
-
-        <label for="ipt_U"><b>u</b> - initial velocity (ms-1)</label>
-        <input oninput="checkIPT('U')" type="text" id="ipt_U" class="input_field" size="5" placeholder="initial velocity (ms-1)">
 
 
         <label for="ipt_A"><b>a</b> - acceleration (ms-2)</label>
@@ -46,10 +45,10 @@
     </div>
     <div class="container container_30">
         <h2 id="result">Results:</h2>
-        <label for="calc_V">Final Velocity</label>
-        <input id="calc_V" class="input_field">
         <label for="calc_U">Initial Velocity</label>
         <input id="calc_U" class="input_field">
+        <label for="calc_V">Final Velocity</label>
+        <input id="calc_V" class="input_field">
         <label for="calc_A">Acceleration</label>
         <input id="calc_A" class="input_field">
         <label for="calc_T">Time</label>
