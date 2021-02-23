@@ -1,9 +1,8 @@
 let hasV, hasA, hasU, hasT;
-hasV = hasA = hasU = hasT = false
-var valV, valA, valU, valT;
-
+hasV = hasU = hasA = hasT = false
+let valV, valA, valU, valT;
 let missingKey = '';
-
+/*
 function calculate1() {
     const U = document.getElementById("ipt_U").value;
     const A = document.getElementById("ipt_A").value;
@@ -15,29 +14,25 @@ function calculate1() {
             document.getElementById("result").innerHTML + (parseFloat(U) + parseFloat(A) * parseFloat(T)) + " ms-1\r\n";
     }
 }
-
+*/
 function checkIPT(v) {
 
-    //why is valV values keep resetting??
-    eval("var val" + v + '=' + "parseFloat(document.getElementById(" + "\"ipt_" + v + "\").value)");
-    console.log("var val" + v + '=' + "parseFloat(document.getElementById(" + "\"ipt_" + v + "\").value)")
+    eval("val" + v + '=' + "parseFloat(document.getElementById(" + "\"ipt_" + v + "\").value)");
     console.log("The value of " + v + ": " + eval("val" + v));
 
-    console.log(valA, valU, valT)
-
-    const input = document.getElementById("ipt_" + v).value;
-    if (input != '') {
-        document.getElementById("ipt_" + v).className = "input_field filled"
-        eval("has" + v + '=' + true)
-        //console log true/false
-        console.log(eval("has" + v))
-    } else {
+    if (document.getElementById("ipt_" + v).value === '') {
         document.getElementById("ipt_" + v).className = "input_field"
         eval("has" + v + '=' + false)
         //console log true/false
         console.log(eval("has" + v))
+    } else {
+        document.getElementById("ipt_" + v).className = "input_field filled"
+        eval("has" + v + '=' + true)
+        //console log true/false
+        console.log(eval("has" + v))
     }
-    //checkEq1();
+
+    checkEq1();
 
 }
 
@@ -56,10 +51,36 @@ function checkEq1() {
             }
         }
         switch (missingKey){
+            case "":
+                break;
             case 'V':
-
                 document.getElementById("calc_V").value = valU + valA * valT;
+                break;
+            case 'U':
+                document.getElementById("calc_U").value = valV - valA * valT;
+                break;
+            case 'A':
+                document.getElementById("calc_A").value = (valV - valU) / valT;
+                break;
+            case 'T':
+                document.getElementById("calc_T").value = (valV - valU) / valA;
+                break;
+            default:
                 break;
         }
     }
+    else{
+        document.getElementById("calc_V").value = '';
+        document.getElementById("calc_U").value = '';
+        document.getElementById("calc_A").value = '';
+        document.getElementById("calc_T").value = '';
+    }
 }
+
+/*
+* v	= u + at
+* s = (u+v)/s * t
+* v^2 = u^2 + 2as
+* s = ut + 1/2(at^2)
+* s = vt - 1/2(at^2)
+* */
