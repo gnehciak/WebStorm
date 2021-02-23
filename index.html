@@ -4,31 +4,48 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="script" href="script.js">
 </head>
-<body>
-<button id="btn_Hi" onclick="buttonPress()">Hi</button>
-<h1>SUVAT EQUATIONS</h1>
-<h2 id="txt_h2">...</h2>
-<div>
-    <h2>v = u + at</h2>
-    <div class="input_field">
-        <input id="ipt_u" name="u">
-        u - initial velocity (ms-1)
+<body class="body_100_width">
+<header>
+    <h1 style="text-align: center">SUVAT EQUATIONS</h1>
+    <div class="topnav">
+        <ul class="mainnav">
+            <li><a>Home</a></li>
+            <li><a>Page</a></li>
+            <li><a>Contact</a></li>
+            <li><a>About</a></li>
+        </ul>
     </div>
-    <div>
-        <input id="ipt_a" name="a">
-        a - acceleration (ms-2)
-    </div>
-    <div>
-        <input id="ipt_t" name="t">
-        t - time (s)
-    </div>
+</header>
 
-</div>
+<main style="margin-right: 20%; margin-left: 20%">
+
+    <h2 id="txt_h2">...</h2>
+    <section style="">
+        <div>what</div>
+    </section>
+    <div class="container container_70">
+
+        <h2>v = u + at</h2>
+        <div>
+            <input id="ipt_u" class="input_field" size="5" name="u">
+            <b>u</b> - initial velocity (ms-1)
+        </div>
+        <div>
+            <input id="ipt_a" class="input_field" name="a">
+            <b>a</b> - acceleration (ms-2)
+        </div>
+        <div>
+            <input id="ipt_t"class="input_field" name="t">
+            <b>t</b> - time (s)
+        </div>
+
+    </div>
+    <div class="container container_30">
+        <p>This is the other part</p>
+    </div>
+</main>
+
 </body>
-<script>
-    function buttonPress(){
-        document.getElementById("txt_h2").innerHTML = "Button Pressed"
-    }
-</script>
 </html>

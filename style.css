@@ -1,10 +1,86 @@
-input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
+
+
+
 
 
 .input_field {
     margin: 10px;
+    width: 60px;
+    height: 30px;
+    border-width: 1px;
+}
+header {
+    background-color: #e5e5e5;
+}
+
+h1 {
+    font-family: "Segoe UI";
+    font-weight: normal;
+    font-size: 3em;
+    margin: 0;
+    padding: 20px 0px;
+}
+
+.container {
+    float: left;
+    margin: 0;
+}
+.container_30 {
+    width: 30%;
+}
+.container_50 {
+    width: 50%;
+}
+.container_70 {
+    width: 70%;
+}
+
+.side_panel {
+    background-color: #ffa350;
+}
+
+div {
+    font-family: "Segoe UI";
+
+}
+
+.body_100_width {
+    margin: 0px;
+    padding: 0px
+}
+
+.mainnav {
+    list-style: none;
+    text-align: center;
+    background-color: dimgrey;
+    padding: 0;
+    margin: 0;
+}
+
+.mainnav li {
+    display: inline-block;
+}
+
+.mainnav a {
+    margin: 20px;
+    text-align: center;
+    width: 100px;
+    font-size: 20px;
+    display: block;
+}
+
+.mainnav a:hover {
+    color: white;
+}
+
+
+
+/* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
+@media screen and (max-width: 600px) {
+    .container {
+        float: none;
+    }
+    .mainnav li {
+        display: inline;
+    }
 }
