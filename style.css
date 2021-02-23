@@ -1,0 +1,10 @@
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+.input_field {
+    margin: 10px;
+}
