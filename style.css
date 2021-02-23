@@ -5,9 +5,13 @@
 
 .input_field {
     margin: 10px;
-    width: 60px;
+    width: 150px;
     height: 30px;
     border-width: 1px;
+    display: block;
+}
+.filled {
+    background-color: lightgreen;
 }
 header {
     background-color: #e5e5e5;
@@ -55,6 +59,7 @@ div {
     background-color: dimgrey;
     padding: 0;
     margin: 0;
+    font-size: 0;
 }
 
 .mainnav li {
@@ -62,15 +67,20 @@ div {
 }
 
 .mainnav a {
-    margin: 20px;
+    padding: 20px;
     text-align: center;
     width: 100px;
     font-size: 20px;
     display: block;
+    color: white;
+    font-family: "Segoe UI";
+    font-weight: normal;
+    transition-duration: 0.5s;
 }
 
 .mainnav a:hover {
-    color: white;
+    background-color: white;
+    color: #222222;
 }
 
 
@@ -81,6 +91,7 @@ div {
         float: none;
     }
     .mainnav li {
-        display: inline;
+        display: table;
+        margin: 0 auto;
     }
 }
