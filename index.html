@@ -26,21 +26,26 @@
         <h2>v = u + at</h2>
 
         <label for="ipt_U"><b>u</b> - initial velocity (ms-1)</label>
-        <input oninput="checkIPT('U')" type="text" id="ipt_U" class="input_field" size="5" placeholder="initial velocity (ms-1)">
+        <input
+                onclick="this.select()"
+                oninput="checkIPT('U')"
+                type="text" id="ipt_U"
+                class="input_field"
+                size="5"
+                placeholder="initial velocity (ms-1)"
+        >
 
         <label for="ipt_V"><b>v</b> - Final Velocity</label>
-        <input oninput="checkIPT('V')" type="text" id="ipt_V"class="input_field" placeholder="velocity">
-
+        <input onclick="this.select()" oninput="checkIPT('V')" type="text" id="ipt_V" class="input_field" placeholder="velocity">
 
         <label for="ipt_A"><b>a</b> - acceleration (ms-2)</label>
-        <input oninput="checkIPT('A')" type="text" id="ipt_A" class="input_field" placeholder="acceleration (ms-2)">
-
+        <input onclick="this.select()" oninput="checkIPT('A')" type="text" id="ipt_A" class="input_field" placeholder="acceleration (ms-2)">
 
         <label for="ipt_T"><b>t</b> - time (s)</label>
-        <input oninput="checkIPT('T')" type="text" id="ipt_T"class="input_field" placeholder="time (s)">
+        <input onclick="this.select()" oninput="checkIPT('T')" type="text" id="ipt_T"class="input_field" placeholder="time (s)">
 
-        <label for="ipt_S"><b>S</b> - displacement</label>
-        <input oninput="checkIPT('S')" type="text" id="ipt_S"class="input_field" placeholder="displacement (m)">
+        <label for="ipt_S"><b>s</b> - displacement</label>
+        <input onclick="this.select()" oninput="checkIPT('S')" type="text" id="ipt_S"class="input_field" placeholder="displacement (m)">
 
     </div>
     <div class="container container_30">
