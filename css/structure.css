@@ -1,10 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,900,800,700,600,500,300,200,100);
 
-
-.clearButton {
+.aclearButton {
     font-family: quicksand;
     display: inline-block;
     font-size: 1em;
-    color: #000;
     background-color: #eeeeee;
     text-decoration: none;
     padding: 5px 40px;
@@ -18,18 +17,34 @@
     outline: none;
 }
 
-.clearButton:hover {
+.aclearButton:hover {
     box-shadow: none;
     transform: scale(.95);
 }
 
-
-
-.dropshadow {
-    box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
-    background-color: white;
+.clearButton {
+    font-family: "Segoe UI";
+    display: inline-block;
+    font-size: 1em;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 5px 40px;
+    border: 3px solid #F24130;
+    color: #F24130;
+    border-radius: 5px;
+    transition: .4s;
+    cursor: pointer;
+    outline: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
+.clearButton:hover {
+    background-color: #F24130;
+    color: #4B4B4C;
+}
+
+
 
 label:hover{
     cursor:text;
@@ -42,7 +57,7 @@ label:hover{
     top:0;
     left:12px;
     transition:all 0.3s ease;
-    font-family: "quicksand";
+    font-family: "Segoe UI";
 }
 .input_group .active{
     font-size:12px;
@@ -79,20 +94,21 @@ label:hover{
     margin-top:30px;
     display:block;
     position:relative;
-    font-family: quicksand;
+    font-family: Segoe UI;
 
 }
 .output_group input{
     margin: 0;
     transition:all 0.3s ease;
-    padding:6px 0 6px 0;
+    padding:6px 0 6px 4%;
     font-size:16px;
     outline:0;
-    border: 0 solid black;
-    border-bottom:1px solid white;
+    border: 0;
+    border-bottom:1px solid #4B4B4C;
     height: 17px;
     width: 100%;
-    color: white;
+    color: #4B4B4C;
+    font-weight: bolder;
 }
 .output_group input:disabled{
     background-color: transparent;
@@ -101,20 +117,17 @@ label:hover{
 .output_group label{
     display:block;
     position:absolute;
-    color:#BBA9B1;
+    color:#4B4B4C;
     font-size:16px;
-    top: 4px;
     left: 0;
     transition:all 1s ease;
     text-align: right;
     overflow: hidden;
     font-weight: normal;
-    color: white;
 }
 .output_group .active{
-    top: 4px;
-    left: 100px;
-    color: white;
+    left: 30%;
+    color: #F24130;
     font-weight: bolder;
 
 }

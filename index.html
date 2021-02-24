@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="container.css">
-    <link rel="stylesheet" href="structure.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/container.css">
+    <link rel="stylesheet" href="css/structure.css">
 
     <script
             src="https://code.jquery.com/jquery-3.3.1.js"
@@ -31,9 +31,11 @@
     <div class="table_container">
         <!--Input-->
         <div style="background-color: #4B4B4C;" class="table_column table_column_50">
-            <div class="dropshadow" style="padding: 20px 40px 40px 40px">
-                <h2 style="display: inline-block; margin-top: 0">INPUT</h2>
-                <button class="clearButton" onclick="resetAll()">Reset All</button>
+
+            <h2 style="font-size: 48px; color: #F24130">INPUT</h2>
+
+            <div class="dropshadow" style="height: 310px; padding: 40px 40px 40px 40px">
+
 
 
                 <div class="input_group">
@@ -61,12 +63,18 @@
                     <input onclick="this.select()" oninput="checkIPT('T', this)" type="text" id="ipt_T">
                 </div>
             </div>
+
+            <button class="clearButton" onclick="resetAll()">RESET ALL</button>
+
         </div>
         <!--Output-->
         <div style="background-color: #F24130; " class="table_column table_column_50">
-            <div class="dropshadow" style="padding: 0 40px 40px 40px">
 
-                <h2 id="result" style="padding-bottom: 20px">Results:</h2>
+            <h2 style="font-size: 48px; color: #4B4B4C">OUTPUT</h2>
+
+            <div class="dropshadow" style="height: 310px; padding: 20px 40px 40px 40px">
+
+
 
                 <div class="output_group">
                     <label for="calc_S">Displacement</label>
@@ -116,6 +124,6 @@
 
 </body>
 <footer>
-    <script src="suvat.js"></script>
+    <script src="js/suvat.js"></script>
 </footer>
 </html>
