@@ -2,35 +2,60 @@ let hasV, hasA, hasU, hasT, hasS;
 hasV = hasU = hasA = hasT = hasS = false
 let valV, valA, valU, valT, valS;
 let missingKey = '';
-/*
-function calculate1() {
-    const U = document.getElementById("ipt_U").value;
-    const A = document.getElementById("ipt_A").value;
-    const T = document.getElementById("ipt_T").value;
 
-    if(u != '' && a != '' && t != ''){
-        console.log(document.getElementById("ipt_U").innerHTML)
-        document.getElementById("result").innerHTML =
-            document.getElementById("result").innerHTML + (parseFloat(U) + parseFloat(A) * parseFloat(T)) + " ms-1\r\n";
+
+const group = document.getElementsByClassName('input_group');
+for(let i=0; i<group.length; i++){
+    group[i].onclick = addLabelActiveClass;// group listener ends
+    const input = group[i].getElementsByTagName('input')[0];
+
+    input.onblur = removeLabelActiveClass;
+    input.onfocus = callLabelActiveClass;
+
+
+}//end for loop
+function callLabelActiveClass(){
+    addLabelActiveClass.call(this.parentNode);
+}
+function addLabelActiveClass(){
+    const label = this.getElementsByTagName('label')[0];
+    const input = this.getElementsByTagName('input')[0];
+    input.className = 'input_active'
+    if(!label.classList.contains('active')){
+        label.classList.add('active');
+        input.focus();
     }
 }
-*/
 
-function checkIPT(v) {
+function removeLabelActiveClass(){
+    //only move label back if input is empty
 
-    eval("val" + v + '=' + "parseFloat(document.getElementById(" + "\"ipt_" + v + "\").value)");
+
+    if(this.value===""){
+        const label = this.parentNode.children[0];
+
+        if(label.classList.contains('active')){
+            label.classList.remove('active');
+        }
+    }
+    input.className = 'input_inactive'
+}
+
+
+
+
+function checkIPT(v, element) {
+
+
+    eval("val" + v + '=' + "parseFloat(element.value)");
     console.log("The value of " + v + ": " + eval("val" + v));
 
-    if (document.getElementById("ipt_" + v).value === '') {
-        document.getElementById("ipt_" + v).className = "input_field"
+    if (element.value === '') {
+        element.classList.remove("filled")
         eval("has" + v + '=' + false)
-        //console log true/false
-        console.log(eval("has" + v))
     } else {
-        document.getElementById("ipt_" + v).className = "input_field filled"
+        element.classList.add("filled")
         eval("has" + v + '=' + true)
-        //console log true/false
-        console.log(eval("has" + v))
     }
 
     const arr = [hasV, hasU, hasA, hasT, hasS];
@@ -210,3 +235,4 @@ function checkMissing(arrdict){
 * s = ut + 1/2(at^2)
 * s = vt - 1/2(at^2)
 * */
+

@@ -1,18 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
 
-
-
-
-
-.input_field {
-    margin: 10px;
-    width: 150px;
-    height: 30px;
-    border-width: 1px;
-    display: block;
+.dropshadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.input_group label{
+    display:block;
+    position:absolute;
+    color:#BBA9B1;
+    font-size:16px;
+    top:3px;
+    left:12px;
+    transition:all 0.3s ease;
+    font-family: "quicksand";
+}
+
+.input_group .active{
+    font-size:12px;
+    top:-20px;
+    left:0;
+    font-weight:700;
+    color:#2470ef;
+    border-bottom: #222222;
+    border-bottom-width: 2px;
+}
+
+.input_active {
+    border-bottom-width: 5px;
+    background-color: black;
+}
+
+.input_inactive {
+    background: white;
+}
+
+.input_group{
+    margin-top:30px;
+    display:inline-block;
+    position:relative;
+}
+label:hover{
+    cursor:text;
+}
+
+.input_group input{
+    transition:all 0.3s ease;
+    padding:6px 12px;
+    font-size:16px;
+    outline:0;
+    border:1px solid #DADADA;
+    border-radius:2px;
+}
+.input_group input:focus{
+    border:1px solid #2470ef;
+}
+
+
+
+
+
+
+
 .filled {
     background-color: lightgreen;
 }
+
+/*Website Structure*/
 header {
     background-color: #e5e5e5;
 }
@@ -25,17 +78,20 @@ h1 {
     padding: 20px 0px;
 }
 
-.container {
+.column {
     float: left;
     margin: 0;
 }
-.container_30 {
+.column_30 {
     width: 30%;
 }
-.container_50 {
+.column_40 {
+    width: 40%;
+}
+.column_50 {
     width: 50%;
 }
-.container_70 {
+.column_70 {
     width: 70%;
 }
 
@@ -52,6 +108,8 @@ div {
     margin: 0px;
     padding: 0px
 }
+
+/*Main Menu*/
 
 .mainnav {
     list-style: none;
