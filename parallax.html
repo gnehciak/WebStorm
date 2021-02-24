@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="structure.css">
+    <link rel="stylesheet" href="parallax.css">
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+<body>
+<div class="parallax">
+
+
+    <div class="header" id="header"></div>
+
+
+    <div style="background-image: url(https://pixabay.com/get/ge55fc7cfce9917f63d085b58a3e3c720312e5d4f7e1b49b1c7e264da4ee09d7b885ccdb00c145e111ad5db43a3c4bb0e_1280.jpg)" class="parallax__layer parallax__layer--back">
+        <div class="title">This is the background</div>
+    </div>
+    <div class="parallax__layer parallax__layer--base">
+        <div class="title">This is the foreground</div>
+    </div>
+
+
+
+</div>
+</body>
+</html>

@@ -4,29 +4,38 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="container.css">
+    <link rel="stylesheet" href="structure.css">
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+
+
 </head>
 <body class="body_100_width">
 <header>
-    <h1 style="text-align: center">SUVAT EQUATIONS</h1>
-    <div>
-        <ul class="mainnav">
-            <li><a>Home</a></li>
-            <li><a>Page</a></li>
-            <li><a>Contact</a></li>
-            <li><a>About</a></li>
-        </ul>
-    </div>
+    <div class="header" id="header"></div>
 </header>
 
-<main style="margin-right: 20%; margin-left: 20%">
+<main>
 
-    <div class="container" style="margin: 100px 0">
-        <div class="column column_50">
+    <div class="table_container">
+        <!--Input-->
+        <div style="background-color: #4B4B4C;" class="table_column table_column_50">
+            <div class="dropshadow" style="padding: 20px 40px 40px 40px">
+                <h2 style="display: inline-block; margin-top: 0">INPUT</h2>
+                <button class="clearButton" onclick="resetAll()">Reset All</button>
 
-            <h2 style="display: inline-block; margin-top: 0">INPUT</h2>
-            <button style="display: inline-block; margin: 0 10px">Reset All</button>
 
-            <div style="padding: 0 50px 0 0">
                 <div class="input_group">
                     <label for="ipt_S"><b>s</b> - displacement</label>
                     <input onclick="this.select()" oninput="checkIPT('S', this)" type="text" id="ipt_S">
@@ -52,14 +61,12 @@
                     <input onclick="this.select()" oninput="checkIPT('T', this)" type="text" id="ipt_T">
                 </div>
             </div>
-
-
         </div>
+        <!--Output-->
+        <div style="background-color: #F24130; " class="table_column table_column_50">
+            <div class="dropshadow" style="padding: 0 40px 40px 40px">
 
-        <div class="column column_50 dropshadow" style="background-color: white">
-            <div style="padding: 0 25px 25px 25px">
-
-                <h2 id="result">Results:</h2>
+                <h2 id="result" style="padding-bottom: 20px">Results:</h2>
 
                 <div class="output_group">
                     <label for="calc_S">Displacement</label>
@@ -83,10 +90,25 @@
 
                 <div class="output_group">
                     <label for="calc_T">Time</label>
-                    <input id="calc_T" class="input_field">
+                    <input id="calc_T" class="input_field" disabled>
                 </div>
 
             </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="column column_50">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="column column_100">
+
         </div>
     </div>
 
@@ -94,6 +116,7 @@
 
 </body>
 <footer>
+    <script src="suvat.js"></script>
     <script src="script.js"></script>
 </footer>
 </html>
