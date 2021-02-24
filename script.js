@@ -3,14 +3,13 @@ hasV = hasU = hasA = hasT = hasS = false
 let valV, valA, valU, valT, valS;
 let missingKey = '';
 
-
 const input_group = document.getElementsByClassName('input_group');
 for(let i=0; i<input_group.length; i++) {
     input_group[i].onclick = addLabel;// group listener ends
     const input = input_group[i].getElementsByTagName('input')[0];
 
     input.onblur = removeLabel;
-    //input.onfocus = callLabel;
+    input.onfocus = callLabel;
 }
 
 function callLabel(){
@@ -19,21 +18,18 @@ function callLabel(){
 
 function addLabel(){
 
-    console.log("onfocus")
+    this.parentElement.getElementsByTagName('label').innerHTML = ''
     const label = this.getElementsByTagName('label')[0];
     const input = this.getElementsByTagName('input')[0];
-    input.className = 'input_active'
     if(!label.classList.contains('active')){
         label.classList.add('active');
         input.focus();
     }
+
 }
 
 function removeLabel(){
     //only move label back if input is empty
-
-
-    console.log('onblur')
     if(this.value===""){
         var label = this.parentNode.children[0];
         if(label.classList.contains('active')){
@@ -52,18 +48,15 @@ function checkIPT(v, element) {
     console.log("The value of " + v + ": " + eval("val" + v));
 
     if (element.value === '') {
-        element.classList.remove("filled")
         eval("has" + v + '=' + false)
     } else {
-        element.classList.add("filled")
         eval("has" + v + '=' + true)
     }
 
-    const arr = [hasV, hasU, hasA, hasT, hasS];
+    const arr = [hasS, hasU, hasV, hasA, hasT];
+    const arrdict = {'S':hasS, 'U':hasU, 'V':hasV, 'A':hasA, 'T':hasT};
     const count = arr.filter(Boolean).length;
-    //console.log(`Amount of true is: ${count}`)
     if(arr.length - count >= 2) {
-        //console.log("equation 1 is available.")
         checkEq1();
         checkEq2();
         checkEq3();
@@ -71,9 +64,16 @@ function checkIPT(v, element) {
         checkEq5();
     }
     else {
-        alert("Only three inputs allowed each time.")
+        //alert("Only three inputs allowed each time.")
         document.getElementById("ipt_" + v).className = "input_field"
-        document.getElementById("ipt_" + v).value = ''
+        document.getElementById("ipt_" + v).value = '';
+        console.log("Hi")
+        for (let bool in arr.values()){
+            console.log(bool)
+            if(!bool){
+                document.getElementById("ipt_" + arr[bool]).disabled = true;
+            }
+        }
         eval("has" + v + '=' + false)
     }
 
@@ -143,7 +143,6 @@ function checkEq3() {
     const arrdict = {'V': hasV, 'U': hasU, 'A': hasA, 'S': hasS};
     const count = arr.filter(Boolean).length;
     if (arr.length - count === 1) {
-        console.log("equation 3 is available.")
         checkMissing(arrdict);
         switch (missingKey) {
             case "":
@@ -170,7 +169,6 @@ function checkEq4() {
     const arrdict = {'S': hasS, 'U': hasU, 'A': hasA, 'T': hasT};
     const count = arr.filter(Boolean).length;
     if (arr.length - count === 1) {
-        console.log("equation 4 is available.")
         checkMissing(arrdict);
         switch (missingKey) {
             case "":
@@ -198,7 +196,6 @@ function checkEq5() {
     const arrdict = {'V': hasV, 'T': hasT, 'A': hasA, 'S': hasS};
     const count = arr.filter(Boolean).length;
     if (arr.length - count === 1) {
-        console.log("equation 5 is available.")
         checkMissing(arrdict);
         switch (missingKey) {
             case "":
