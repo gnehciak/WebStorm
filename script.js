@@ -4,20 +4,22 @@ let valV, valA, valU, valT, valS;
 let missingKey = '';
 
 
-const group = document.getElementsByClassName('input_group');
-for(let i=0; i<group.length; i++){
-    group[i].onclick = addLabelActiveClass;// group listener ends
-    const input = group[i].getElementsByTagName('input')[0];
+const input_group = document.getElementsByClassName('input_group');
+for(let i=0; i<input_group.length; i++) {
+    input_group[i].onclick = addLabel;// group listener ends
+    const input = input_group[i].getElementsByTagName('input')[0];
 
-    input.onblur = removeLabelActiveClass;
-    input.onfocus = callLabelActiveClass;
-
-
-}//end for loop
-function callLabelActiveClass(){
-    addLabelActiveClass.call(this.parentNode);
+    input.onblur = removeLabel;
+    //input.onfocus = callLabel;
 }
-function addLabelActiveClass(){
+
+function callLabel(){
+    addLabel.call(this.parentNode);
+}
+
+function addLabel(){
+
+    console.log("onfocus")
     const label = this.getElementsByTagName('label')[0];
     const input = this.getElementsByTagName('input')[0];
     input.className = 'input_active'
@@ -27,18 +29,17 @@ function addLabelActiveClass(){
     }
 }
 
-function removeLabelActiveClass(){
+function removeLabel(){
     //only move label back if input is empty
 
 
+    console.log('onblur')
     if(this.value===""){
-        const label = this.parentNode.children[0];
-
+        var label = this.parentNode.children[0];
         if(label.classList.contains('active')){
             label.classList.remove('active');
         }
     }
-    input.className = 'input_inactive'
 }
 
 
@@ -227,6 +228,7 @@ function checkMissing(arrdict){
         }
     }
 }
+
 
 /*
 * v	= u + at
